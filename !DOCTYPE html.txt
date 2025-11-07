@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jain Dietary Guidelines</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-after: always; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #28a745;
+        }
+        
+        h1 {
+            font-size: 42px;
+            color: #28a745;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .note-section {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .note-section h3 {
+            margin-top: 0;
+            color: #856404;
+            font-size: 20px;
+        }
+        
+        .note-section p {
+            margin: 0;
+            line-height: 1.6;
+            color: #856404;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .column {
+            border-radius: 8px;
+            padding: 25px;
+        }
+        
+        .allowed {
+            background: linear-gradient(to bottom, #d4edda 0%, #f0f9f4 100%);
+            border: 2px solid #28a745;
+        }
+        
+        .not-allowed {
+            background: linear-gradient(to bottom, #f8d7da 0%, #fff5f5 100%);
+            border: 2px solid #dc3545;
+        }
+        
+        .column h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+        
+        .allowed h2 {
+            color: #28a745;
+            border-bottom-color: #28a745;
+        }
+        
+        .not-allowed h2 {
+            color: #dc3545;
+            border-bottom-color: #dc3545;
+        }
+        
+        .category {
+            margin: 20px 0;
+        }
+        
+        .category h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        .allowed .category h3 {
+            background: #28a745;
+            color: white;
+        }
+        
+        .not-allowed .category h3 {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .category ul {
+            margin: 8px 0;
+            padding-left: 25px;
+            line-height: 1.8;
+        }
+        
+        .category li {
+            margin: 5px 0;
+        }
+        
+        .chart-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .chart-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        .chart-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .icons-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .icon-item {
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .icon-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕉️ Jain Dietary Guidelines</h1>
+            <p class="subtitle">A Comprehensive Guide to Jain Food Principles</p>
+        </div>
+        
+        <div class="note-section">
+            <h3>⚠️ Important Note</h3>
+            <p>Jains strictly follow vegetarian principles rooted in the concept of Ahimsa (non-violence). Jains only eat at purely vegetarian restaurants and establishments, completely avoiding food from places that serve non-vegetarian items. This practice ensures that food preparation follows Jain values and prevents cross-contamination with non-vegetarian ingredients or cooking equipment.</p>
+        </div>
+        
+        <div class="two-column">
+            <div class="column allowed">
+                <h2>✓ Foods Allowed</h2>
+                
+                <div class="category">
+                    <h3>🍎 Fruits</h3>
+                    <ul>
+                        <li>Apples, Bananas, Oranges, Grapes</li>
+                        <li>Mangoes, Papayas, Pineapples</li>
+                        <li>Berries (strawberries, blueberries)</li>
+                        <li>Melons, Peaches, Plums</li>
+                        <li>Pomegranates, Guavas, Dates</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🥬 Vegetables</h3>
+                    <ul>
+                        <li>Leafy greens (spinach, lettuce, cabbage)</li>
+                        <li>Tomatoes, Cucumbers, Bell peppers</li>
+                        <li>Broccoli, Cauliflower, Zucchini</li>
+                        <li>Beans (green beans, broad beans)</li>
+                        <li>Pumpkin, Squash, Gourds</li>
+                        <li>Okra, Eggplant, Bitter gourd</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🌾 Grains & Cereals</h3>
+                    <ul>
+                        <li>Rice (white, brown, basmati)</li>
+                        <li>Wheat, Barley, Oats</li>
+                        <li>Millet, Sorghum, Quinoa</li>
+                        <li>Corn, Amaranth</li>
+                        <li>Bread, Pasta, Noodles</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🫘 Legumes & Lentils</h3>
+                    <ul>
+                        <li>Red lentils, Yellow lentils</li>
+                        <li>Chickpeas, Black beans</li>
+                        <li>Mung beans, Kidney beans</li>
+                        <li>Split peas, Soybeans (limited)</li>
+                        <li>Peanuts (in moderation)</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🥜 Nuts & Seeds</h3>
+                    <ul>
+                        <li>Almonds, Cashews, Walnuts</li>
+                        <li>Pistachios, Hazelnuts</li>
+                        <li>Sunflower seeds, Pumpkin seeds</li>
+                        <li>Sesame seeds, Chia seeds</li>
+                        <li>Flax seeds, Poppy seeds</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🥛 Dairy</h3>
+                    <ul>
+                        <li>Milk (cow, buffalo, goat)</li>
+                        <li>Yogurt, Buttermilk</li>
+                        <li>Cheese, Paneer</li>
+                        <li>Butter, Ghee, Cream</li>
+                        <li>All dairy must be vegetarian-sourced</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🫗 Oils & Fats</h3>
+                    <ul>
+                        <li>Sunflower oil, Olive oil</li>
+                        <li>Coconut oil, Sesame oil</li>
+                        <li>Peanut oil, Mustard oil</li>
+                        <li>Ghee (clarified butter)</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🍯 Sweeteners</h3>
+                    <ul>
+                        <li>Sugar (white, brown)</li>
+                        <li>Jaggery, Maple syrup</li>
+                        <li>Some traditions allow honey</li>
+                        <li>Date syrup, Stevia</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>☕ Beverages</h3>
+                    <ul>
+                        <li>Water, Milk, Herbal teas</li>
+                        <li>Fresh fruit juices</li>
+                        <li>Coconut water</li>
+                        <li>Buttermilk, Lassi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="column not-allowed">
+                <h2>✗ Foods Not Allowed</h2>
+                
+                <div class="category">
+                    <h3>🚫 Meat, Fish & Eggs</h3>
+                    <ul>
+                        <li>All types of meat (beef, pork, lamb)</li>
+                        <li>Poultry (chicken, turkey, duck)</li>
+                        <li>All seafood and fish</li>
+                        <li>Eggs (chicken, duck, quail)</li>
+                        <li>Any animal-derived products</li>
+                        <li>Gelatin, Animal rennet</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🥕 Root Vegetables</h3>
+                    <ul>
+                        <li>Potatoes, Sweet potatoes</li>
+                        <li>Onions, Garlic, Ginger</li>
+                        <li>Carrots, Radishes, Beets</li>
+                        <li>Turnips, Yams</li>
+                        <li>All underground vegetables</li>
+                        <li>(Eating these kills the entire plant)</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🍄 Fungi & Microorganisms</h3>
+                    <ul>
+                        <li>Mushrooms (all varieties)</li>
+                        <li>Truffles, Morels</li>
+                        <li>Yeast-based products (some traditions)</li>
+                        <li>Fermented foods (pickles, sauerkraut)</li>
+                        <li>Blue cheese (contains mold)</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🍷 Fermented & Alcoholic Items</h3>
+                    <ul>
+                        <li>All alcoholic beverages</li>
+                        <li>Wine, Beer, Spirits</li>
+                        <li>Vinegar (some traditions)</li>
+                        <li>Fermented sauces</li>
+                        <li>Kombucha, Kefir</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>🏪 Foods from Non-Jain Places</h3>
+                    <ul>
+                        <li>Any food from non-vegetarian restaurants</li>
+                        <li>Food cooked with non-veg utensils</li>
+                        <li>Street food from mixed vendors</li>
+                        <li>Food with uncertain preparation methods</li>
+                        <li>Meals from places serving meat</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3>⛔ Other Restrictions</h3>
+                    <ul>
+                        <li>Food eaten after sunset (some sects)</li>
+                        <li>Stale or leftover food</li>
+                        <li>Food with unknown ingredients</li>
+                        <li>Honey (strict Jains avoid it)</li>
+                        <li>Foods that harm microorganisms</li>
+                        <li>Certain seeds and sprouts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <div class="chart-section">
+            <h2>📊 Dietary Overview</h2>
+            <div class="charts-container">
+                <div class="chart-box">
+                    <h3>Food Categories Distribution</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Allowed vs Not Allowed</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="icons-section">
+            <div class="icon-item">
+                <div class="icon">🍎</div>
+                <div class="icon-label">Fruits</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🥬</div>
+                <div class="icon-label">Vegetables</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🥛</div>
+                <div class="icon-label">Dairy</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🌾</div>
+                <div class="icon-label">Grains</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🚫</div>
+                <div class="icon-label">No Meat</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🥕</div>
+                <div class="icon-label">No Roots</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Note:</strong> Jain dietary practices may vary between different sects and individual beliefs. Always consult with knowledgeable community members for specific guidance.</p>
+            <p style="margin-top: 10px;">© 2025 Jain Dietary Guidelines | Following the path of Ahimsa</p>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Allowed Foods', 'Not Allowed Foods'],
+                datasets: [{
+                    data: [60, 40],
+                    backgroundColor: ['#28a745', '#dc3545'],
+                    borderColor: ['#ffffff', '#ffffff'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 14 },
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: false
+                    }
+                }
+            }
+        });
+        
+        // Bar Chart
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Fruits', 'Vegetables', 'Grains', 'Legumes', 'Dairy', 'Meat/Fish', 'Root Veg', 'Alcohol'],
+                datasets: [{
+                    label: 'Allowed',
+                    data: [100, 100, 100, 100, 100, 0, 0, 0],
+                    backgroundColor: '#28a745'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y === 100 ? 'Allowed' : 'Not Allowed';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
